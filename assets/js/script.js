@@ -107,6 +107,9 @@ function incrementScore() {
     document.getElementById("score").innerText = ++oldScore;
 }
 
+/**
+ * updates the current tally of incorrect scores from the DOM and increase it by 1
+ */
 function incrementWrongAnswer() {
     let oldScore = parseInt(document.getElementById("incorrect").innerText);
     document.getElementById("incorrect").innerText = ++oldScore;
@@ -119,8 +122,8 @@ function displayAdditionQuestion(operand1, operand2) {
 }
 
 function displaySubtractQuestion(operand1, operand2) {
-  document.getElementById("operand1").textContent = operand1;
-  document.getElementById("operand2").textContent = operand2;
+  document.getElementById("operand1").textContent = operand1 > operand2 ? operand1 : operand2;
+  document.getElementById("operand2").textContent = operand1 > operand2 ? operand2 : operand1;
   document.getElementById("operator").textContent = "-";
 }
 
